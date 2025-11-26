@@ -1,6 +1,7 @@
 import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { motion } from "framer-motion";
+import { AiOutlineCoffee } from "react-icons/ai";
 export default function Hello({
   isSideBarOpen,
   setIsSidebarOpen,
@@ -10,7 +11,7 @@ export default function Hello({
 }) {
   return (
     <nav className="absolute top-0 left-0 w-full pt-10 text-white z-20">
-      <div className="container">
+      <div className="px-10 md:px-20">
         <div className=" flex items-center justify-between">
           {/* logo section  */}
           <motion.h1
@@ -22,10 +23,10 @@ export default function Hello({
               delay: 0.2,
               stiffness: 100,
             }}
-            className="text-2xl font-semibold uppercase"
+            className="text-2xl font-semibold uppercase flex items-center gap-2"
           >
-            <span className="text-primary">Coders {""}</span>
-            Coffee.
+            <span className="text-primary">Caffio</span>
+            <AiOutlineCoffee className="text-2xl text-primary" />
           </motion.h1>
 
           {/* menu  */}

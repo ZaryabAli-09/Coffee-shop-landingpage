@@ -7,6 +7,7 @@ import Hello from "../Navbar/Hello";
 import { motion } from "framer-motion";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Hero() {
   const [isSideBarOpen, setIsSidebarOpen] = useState(false);
@@ -20,17 +21,17 @@ export default function Hero() {
 
   return (
     <main style={bgImage} className="bgImage">
-      <section className="relative min-h-[750px] w-full">
-        <div className="container">
+      <section className="relative  w-full">
+        <div className="px-10 md:px-20">
           {/* Navbar  section goes here */}
           <Hello
             isSideBarOpen={isSideBarOpen}
             setIsSidebarOpen={setIsSidebarOpen}
           />
           {/* Hero content goes here */}{" "}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center min-h-[700px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center h-fit lg:h-[100vh]">
             {/* text content  */}
-            <div className="text-lightOrange mt-[100px md:mt-0 p-4 space-y-28">
+            <div className="text-lightOrange  mt-[70px] md:mt-0 p-4 space-y-16 md:space-y-28">
               <motion.h1
                 initial={{ opacity: 0, y: -100 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -40,9 +41,9 @@ export default function Hero() {
                   delay: 1,
                   stiffness: 100,
                 }}
-                className="text-7xl font-bold leading-tight ml-14"
+                className="text-4xl mt-5 text-center md:text-start  md:text-8xl font-bold leading-tight md:ml-14"
               >
-                Black Tumbler
+                Blvck Tumbler
               </motion.h1>
               <motion.div
                 initial={{ opacity: 0, y: -100 }}
@@ -55,7 +56,7 @@ export default function Hero() {
                 }}
                 className="relative"
               >
-                <div className=" relative z-10 space-y-4">
+                <div className=" relative z-10 space-y-2 md:space-y-4">
                   <h1 className="text-2xl">Black Lifestyle Lovers.</h1>
                   <h1 className="text-sm opacity-55 leading-loose">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -64,7 +65,7 @@ export default function Hero() {
                     incidunt ut voluptatem temporibus dolores excepturi.
                   </h1>
                 </div>
-                <div className="absolute -top-6 -left-10 w-[250px] h-[190px] bg-gray-700/25 "></div>
+                <div className="absolute -top-6 -left-10  w-[370px] h-[230px] md:w-[250px] md:h-[190px] bg-gray-700/25 "></div>
               </motion.div>
             </div>
             {/* Hero image section goes here */}
@@ -80,7 +81,7 @@ export default function Hero() {
                 }}
               >
                 <Image
-                  className="relative z-40 h-[400px] md:h-[700px] img-shadow"
+                  className="relative z-40 h-[400px] w-[200px] md:w-auto md:h-[700px] img-shadow"
                   src={HeroImg}
                   alt="hero-image"
                 />
@@ -95,7 +96,7 @@ export default function Hero() {
                   delay: 1.2,
                   stiffness: 100,
                 }}
-                className="h-[180px] w-[180px] absolute top-24 
+                className="h-[180px] w-[180px] absolute top-10 md:top-24 
             border-20 -right-16 border-primary rounded-full z-10"
               ></motion.div>
 
@@ -128,9 +129,6 @@ export default function Hero() {
               }}
               className="text-lightOrange mt-[100px md:mt-0 p-4 space-y-28"
             >
-              <h1 className="opacity-0 text-7xl font-bold leading-tight ml-14">
-                Black Tumbler
-              </h1>
               <motion.div
                 initial={{ opacity: 0, y: -100 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -140,7 +138,7 @@ export default function Hero() {
                   delay: 1.2,
                   stiffness: 100,
                 }}
-                className="relative"
+                className="relative visible"
               >
                 <div className=" relative z-10 space-y-4">
                   <h1 className="text-2xl">The Design.</h1>
@@ -150,7 +148,7 @@ export default function Hero() {
                     numquam, quae.
                   </h1>
                 </div>
-                <div className="absolute -top-6 -right-10 w-[250px] h-[190px] bg-darkGray/25 "></div>
+                <div className="absolute -top-6 -right-10 w-[380px] h-[230px] md:w-[250px] bg-darkGray/25 "></div>
               </motion.div>
             </motion.div>
           </div>
@@ -172,13 +170,19 @@ export default function Hero() {
                 <div className="w-[1px] h-[70px] bg-white "></div>
                 {/* social icons  */}
                 <div className="inline-block p-2 rounded-full cursor-pointer border border-white text-2xl">
-                  <FaFacebookF />
+                  <Link href={"https://www.facebook.com"}>
+                    <FaFacebookF />
+                  </Link>
                 </div>
                 <div className="inline-block p-2 rounded-full cursor-pointer border border-white text-2xl">
-                  <FaTwitter />
+                  <Link href={"https://x.com"}>
+                    <FaTwitter />{" "}
+                  </Link>
                 </div>
                 <div className="inline-block p-2 rounded-full cursor-pointer border border-white text-2xl">
-                  <FaInstagram />
+                  <Link href={"https://www.instagram.com"}>
+                    <FaInstagram />
+                  </Link>
                 </div>
 
                 <div className="w-[1px] h-[70px] bg-white "></div>

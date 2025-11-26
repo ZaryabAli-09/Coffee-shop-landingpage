@@ -22,7 +22,7 @@ const Footer = () => {
     >
       {/* Overlay */}
       <div className="bg-primary min-h-[400px]">
-        <div className="container mx-auto grid md:grid-cols-3 gap-8 py-12 px-4">
+        <div className="px-20 mx-auto grid md:grid-cols-3 gap-8 py-12 ">
           {/* Company Info */}
           <div className="flex flex-col justify-between">
             <a

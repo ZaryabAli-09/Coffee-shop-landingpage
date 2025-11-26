@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 export default function WhereToBuy() {
   return (
-    <div className="container my-36">
+    <div className="px-20 my-36">
       <div>
         {/* form section  */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 place-items-center">

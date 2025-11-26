@@ -7,7 +7,7 @@ import AppStore from "./components/AppStore/AppStore";
 
 export default function Home() {
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden ">
       <Hero />
       <Services />
       <WhereToBuy />

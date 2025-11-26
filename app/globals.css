@@ -27,9 +27,11 @@
 .primary-btn {
   @apply bg-primary text-white px-6 py-3 rounded-md hover:bg-primaryDark transition;
 }
-.container {
-  padding-inline: var(--container-padding);
-}
+/* .container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: auto;
+} */
 
 @media (min-width: 640px) {
   .container {
