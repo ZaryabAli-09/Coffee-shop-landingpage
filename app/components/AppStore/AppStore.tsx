@@ -35,7 +35,7 @@ const itemVariants: Variants = {
 
 const AppStore = () => {
   return (
-    <div className="py-14 border" style={backgroundStyle}>
+    <div className="py-14 " style={backgroundStyle}>
       <div className="container">
         <div className="grid sm:grid-cols-2 grid-cols-1 items-center gap-4">
           {/* Animated Section */}
