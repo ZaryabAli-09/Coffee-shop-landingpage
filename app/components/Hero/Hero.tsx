@@ -5,8 +5,12 @@ import HeroImg from "@/public/assets/black.png";
 import Image from "next/image";
 import Hello from "../Navbar/Hello";
 import { motion } from "framer-motion";
+import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import { useState } from "react";
 
 export default function Hero() {
+  const [isSideBarOpen, setIsSidebarOpen] = useState(false);
+
   const bgImage = {
     backgroundImage: `url(${BgImage.src})`,
     backgroundSize: "cover",
@@ -16,10 +20,13 @@ export default function Hero() {
 
   return (
     <main style={bgImage} className="bgImage">
-      <section className="min-h-[750px] w-full">
+      <section className="relative min-h-[750px] w-full">
         <div className="container">
           {/* Navbar  section goes here */}
-          <Hello />
+          <Hello
+            isSideBarOpen={isSideBarOpen}
+            setIsSidebarOpen={setIsSidebarOpen}
+          />
           {/* Hero content goes here */}{" "}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center min-h-[850px]">
             {/* text content  */}
@@ -102,7 +109,7 @@ export default function Hero() {
                   delay: 0.8,
                   stiffness: 100,
                 }}
-                className="absolute -top-20 left-[200px] z-[1]"
+                className="absolute -top-20 left-[200px] z-[-1]"
               >
                 <h1 className="text-[140px] scale-150 font-bold text-darkGray/40 leading-none">
                   Blvck Tumbler
@@ -148,6 +155,37 @@ export default function Hero() {
             </motion.div>
           </div>
         </div>
+
+        {/* sidebar menu  */}
+
+        {!isSideBarOpen ? (
+          ""
+        ) : (
+          <motion.div
+            initial={{ x: "100%" }}
+            whileInView={{ x: 0 }}
+            className="absolute top-0 right-0 h-full w-[140px] bg-linear-to-b from-primary/80 to-primaryDark/80 backdrop:blur-sm z-10  "
+          >
+            <div className="w-full h-full flex justify-center items-center ">
+              <div className=" flex flex-col justify-center items-center gap-6 text-white">
+                {/* line  */}
+                <div className="w-[1px] h-[70px] bg-white "></div>
+                {/* social icons  */}
+                <div className="inline-block p-2 rounded-full cursor-pointer border border-white text-2xl">
+                  <FaFacebookF />
+                </div>
+                <div className="inline-block p-2 rounded-full cursor-pointer border border-white text-2xl">
+                  <FaTwitter />
+                </div>
+                <div className="inline-block p-2 rounded-full cursor-pointer border border-white text-2xl">
+                  <FaInstagram />
+                </div>
+
+                <div className="w-[1px] h-[70px] bg-white "></div>
+              </div>
+            </div>
+          </motion.div>
+        )}
       </section>
     </main>
   );
