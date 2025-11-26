@@ -28,7 +28,7 @@ export default function Hero() {
             setIsSidebarOpen={setIsSidebarOpen}
           />
           {/* Hero content goes here */}{" "}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center min-h-[850px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center min-h-[700px]">
             {/* text content  */}
             <div className="text-lightOrange mt-[100px md:mt-0 p-4 space-y-28">
               <motion.h1
