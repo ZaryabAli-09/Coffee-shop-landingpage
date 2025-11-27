@@ -3,7 +3,7 @@
 import { motion, type Variants } from "framer-motion";
 import AppStoreImg from "@/public/assets/website/app_store.png";
 import PlayStoreImg from "@/public/assets/website/play_store.png";
-import BgPng from "@/public/assets/website/banner.jpg";
+import BgPng from "@/public/assets/coffee-cover.jpg";
 import Image from "next/image";
 
 const containerVariants: Variants = {
@@ -29,33 +29,37 @@ const AppStore = () => {
     <div className="relative my-16 m-5 md:m-10 overflow-hidden rounded-xl">
       {/* Background Image */}
       <div
-        className="w-full md:p-20  rounded-xl h-[350px] sm:h-[400px] md:h-[450px] bg-cover bg-center"
+        className="w-full md:p-20 flex items-center justify-end  rounded-xl h-[350px] sm:h-[400px] md:h-[450px] bg-cover bg-center"
         style={{ backgroundImage: `url(${BgPng.src})` }}
       >
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/10" />
 
         {/* Right Content Section */}
-        <div className="absolute inset-0 right-10 flex justify-end items-center px-6 sm:px-10 md:px-20">
+        <div className="max-w-md">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}
-            className="text-right space-y-6 max-w-lg"
+            className="text-left space-y-6 max-w-lg"
           >
             {/* Text Title */}
             <motion.h1
               variants={itemVariants}
-              className=" text-xl font-bold md:text-4xl md:font-semibold text-primary eading-snug"
+              className="text-4xl font-semibold "
             >
-              Caffio is now available on Android & iOS
+              Download the app{" "}
             </motion.h1>
-
+            {/* Text Title */}
+            <motion.p variants={itemVariants} className=" ">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum
+              enim laudantium.
+            </motion.p>
             {/* Buttons */}
             <motion.div
               variants={itemVariants}
-              className="flex justify-end gap-4 flex-wrap"
+              className="flex items-center flex-wrap"
             >
               <motion.a
                 href="#"
