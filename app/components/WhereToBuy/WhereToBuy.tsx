@@ -4,10 +4,10 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 export default function WhereToBuy() {
   return (
-    <div className="px-20 my-36">
-      <div>
+    <div className="px-10 md:px-20  py-52 ">
+      <div className="flex items-center justify-between flex-col md:flex-row ">
         {/* form section  */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 place-items-center">
+        <div>
           <div className="space-y-8">
             <motion.h1
               initial={{ opacity: 0, y: 100 }}
@@ -18,7 +18,7 @@ export default function WhereToBuy() {
                 damping: 10,
                 delay: 0.2,
               }}
-              className="text-4xl font-bold text-darkGray font-serif"
+              className="text-4xl font-bold text-darkGray "
             >
               Buy our products from anywhere
             </motion.h1>

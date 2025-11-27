@@ -8,24 +8,24 @@ import Image from "next/image";
 const services = [
   {
     id: 1,
-    title: "Coffee 1",
+    title: "Espresso Roast",
     img: CoffeeImg3,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+      "Bold, rich, and full-bodied with deep caramel notes — perfect for espresso lovers.",
   },
   {
     id: 2,
-    title: "Coffee 2",
+    title: "Caramel Macchiato",
     img: CoffeeImg1,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+      "Smooth espresso with sweet caramel and creamy milk for a perfectly balanced treat.",
   },
   {
     id: 3,
-    title: "Coffee 3",
+    title: "Mocha Delight",
     img: CoffeeImg3,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+      "A rich mix of espresso and chocolate, finished with creamy milk for a sweet indulgence.",
   },
 ];
 
@@ -57,7 +57,7 @@ const containerVariants = {
 
 export default function Services() {
   return (
-    <div className="container my-16  space-y-4 ">
+    <div className="px-10 md:px-20 my-16  space-y-4 ">
       {/* header section  */}
       <div className="text-center max-w-lg mx-auto space-y-2">
         <motion.h1
@@ -69,9 +69,9 @@ export default function Services() {
             delay: 0.2,
             stiffness: 150,
           }}
-          className="text-3xl font-bold text-lightGray"
+          className="text-3xl font-bold text-lightGray "
         >
-          Fresh and <span className="text-primary">Tasty Coffee</span>
+          ☕ Brewed Daily, <span className="text-primary">Served Warm</span>
         </motion.h1>{" "}
         <motion.p
           initial={{ opacity: 0, scale: 0.5 }}
@@ -84,9 +84,8 @@ export default function Services() {
           }}
           className="text-lightGray"
         >
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione
-          voluptatibus sapiente illo nostrum facere totam sed unde dolores at
-          modi, tempora laborum pariatur ipsam cum eius. Eos provident a nisi?
+          Experience the aroma and flavor of freshly brewed coffee made from the
+          finest beans.
         </motion.p>
       </div>
 
@@ -96,8 +95,8 @@ export default function Services() {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.8 }}
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
+        viewport={{ amount: 0.2 }}
+        className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-8"
       >
         {services.map((service) => (
           <motion.div

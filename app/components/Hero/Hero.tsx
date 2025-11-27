@@ -93,7 +93,7 @@ export default function Hero() {
                 transition={{
                   type: "spring",
                   damping: 10,
-                  delay: 1.2,
+                  delay: 2,
                   stiffness: 100,
                 }}
                 className="h-[180px] w-[180px] absolute top-10 md:top-24 

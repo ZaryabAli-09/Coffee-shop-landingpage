@@ -3,23 +3,14 @@
 import { motion, type Variants } from "framer-motion";
 import AppStoreImg from "@/public/assets/website/app_store.png";
 import PlayStoreImg from "@/public/assets/website/play_store.png";
-import BgPng from "@/public/assets/website/coffee-footer.jpg";
+import BgPng from "@/public/assets/website/banner.jpg";
 import Image from "next/image";
 
-const backgroundStyle = {
-  backgroundImage: `url(${BgPng})`,
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "cover",
-  //   height: "100%",
-  //   width: "100%",
-};
-
 const containerVariants: Variants = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0, x: 50 },
   visible: {
     opacity: 1,
-    y: 0,
+    x: 0,
     transition: {
       duration: 0.6,
       ease: "easeOut",
@@ -29,34 +20,42 @@ const containerVariants: Variants = {
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
 const AppStore = () => {
   return (
-    <div className="py-14 " style={backgroundStyle}>
-      <div className="px-20">
-        <div className="grid sm:grid-cols-2 grid-cols-1 items-center gap-4">
-          {/* Animated Section */}
+    <div className="relative my-16 m-5 md:m-10 overflow-hidden rounded-xl">
+      {/* Background Image */}
+      <div
+        className="w-full md:p-20  rounded-xl h-[350px] sm:h-[400px] md:h-[450px] bg-cover bg-center"
+        style={{ backgroundImage: `url(${BgPng.src})` }}
+      >
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/10" />
+
+        {/* Right Content Section */}
+        <div className="absolute inset-0 right-10 flex justify-end items-center px-6 sm:px-10 md:px-20">
           <motion.div
             variants={containerVariants}
             initial="hidden"
-            animate="visible" // <-- Animate directly using string
-            className="space-y-6 max-w-xl mx-auto"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
+            className="text-right space-y-6 max-w-lg"
           >
-            {/* Text */}
+            {/* Text Title */}
             <motion.h1
               variants={itemVariants}
-              className="text-2xl text-center sm:text-left sm:text-4xl font-semibold text-white/90 pl-3"
+              className=" text-xl font-bold md:text-4xl md:font-semibold text-primary eading-snug"
             >
-              Coffee Cafe is available for Android and IOS
+              Caffio is now available on Android & iOS
             </motion.h1>
 
-            {/* App Store & Play Store Buttons */}
+            {/* Buttons */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-wrap justify-center sm:justify-start items-center gap-4"
+              className="flex justify-end gap-4 flex-wrap"
             >
               <motion.a
                 href="#"
@@ -65,10 +64,11 @@ const AppStore = () => {
               >
                 <Image
                   src={PlayStoreImg}
-                  alt="Play store"
-                  className="max-w-[150px] sm:max-w-[120px] md:max-w-[200px]"
+                  alt="Play Store"
+                  className="w-[150px] md:w-[200px]"
                 />
               </motion.a>
+
               <motion.a
                 href="#"
                 whileHover={{ scale: 1.05 }}
@@ -76,15 +76,12 @@ const AppStore = () => {
               >
                 <Image
                   src={AppStoreImg}
-                  alt="App store"
-                  className="max-w-[150px] sm:max-w-[120px] md:max-w-[200px]"
+                  alt="App Store"
+                  className="w-[150px] md:w-[200px]"
                 />
               </motion.a>
             </motion.div>
           </motion.div>
-
-          {/* Empty Column */}
-          <div></div>
         </div>
       </div>
     </div>

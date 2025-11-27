@@ -1,6 +1,4 @@
-import React from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import FooterBg from "@/public/assets/website/coffee-footer.jpg";
 
 const FooterLinks = [
   { title: "Home", link: "/#home" },
@@ -22,14 +20,14 @@ const Footer = () => {
     >
       {/* Overlay */}
       <div className="bg-primary min-h-[400px]">
-        <div className="px-20 mx-auto grid md:grid-cols-3 gap-8 py-12 ">
+        <div className="px-10 md:px-20 mx-auto grid md:grid-cols-3 gap-8 py-12 ">
           {/* Company Info */}
           <div className="flex flex-col justify-between">
             <a
               href="#"
               className="font-cursive text-3xl sm:text-4xl font-bold tracking-wide hover:text-primary transition"
             >
-              Coders Coffee
+              Caffio
             </a>
             <p className="mt-4 text-gray-200">
               Crafted Coffee, Cozy Vibes, Unforgettable Moments – Your Perfect
